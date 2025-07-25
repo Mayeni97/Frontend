@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Warhammer Carousel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="banner">
+    <div class="slider" style="--quntity: 10">
+      <div class="item" style="--position: 1"><img src="https://wh40k.lexicanum.com/mediawiki/images/f/ff/BA_Chapter_Banner.jpg" alt="Banner1" /></div>
+      <div class="item" style="--position: 2"><img src="https://wh40k.lexicanum.com/mediawiki/images/9/97/Darkangelsbanner.jpg" alt="Banner2" /></div>
+      <div class="item" style="--position: 3"><img src="https://wh40k.lexicanum.com/mediawiki/images/4/4b/IFBanner.jpg" alt="Banner3" /></div>
+      <div class="item" style="--position: 4"><img src="https://wh40k.lexicanum.com/mediawiki/images/thumb/0/05/Ironhandsbanner.jpg/300px-Ironhandsbanner.jpg" alt="Banner4" /></div>
+      <div class="item" style="--position: 5"><img src="https://wh40k.lexicanum.com/mediawiki/images/thumb/4/4e/Ravenguardbanner.jpg/289px-Ravenguardbanner.jpg" alt="Banner5" /></div>
+      <div class="item" style="--position: 6"><img src="https://wh40k.lexicanum.com/mediawiki/images/thumb/f/f6/Salamandersbanner.jpg/298px-Salamandersbanner.jpg" alt="Banner6" /></div>
+      <div class="item" style="--position: 7"><img src="https://wh40k.lexicanum.com/mediawiki/images/thumb/1/12/Banner_of_Macragge.jpg/291px-Banner_of_Macragge.jpg" alt="Banner7" /></div>
+      <div class="item" style="--position: 8"><img src="https://wh40k.lexicanum.com/mediawiki/images/thumb/7/70/Whitescarbanner.jpg/289px-Whitescarbanner.jpg" alt="Banner8" /></div>
+      <div class="item" style="--position: 9"><img src="https://wh40k.lexicanum.com/mediawiki/images/f/ff/CrimsonFistsBanner.jpg" alt="Banner9" /></div>
+      <div class="item" style="--position: 10"><img src="https://wh40k.lexicanum.com/mediawiki/images/1/1a/BlackTemplarsChapterBanner.jpg" alt="Banner10" /></div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Welcome to the beginning</h1>
+    <p>This page shows a rotating banner of various Warhammer 40k chapter banners.</p>
+    <p>Mayowa Ayeni</p>
+  </div>
+
+  <div id="youtube-player"></div>
+  <button id="toggle-sound">🔇</button>
+
+  <script>
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(tag);
+
+    let player;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('youtube-player', {
+        height: '0',
+        width: '0',
+        videoId: 'oInaDVJ6iRw',
+        playerVars: {
+          autoplay: 1,
+          loop: 1,
+          playlist: 'oInaDVJ6iRw',
+          controls: 0,
+          showinfo: 0,
+          modestbranding: 1,
+          mute: 1
+        },
+        events: {
+          onReady: function (e) {
+            e.target.playVideo();
+          }
+        }
+      });
+    }
+
+    document.getElementById('toggle-sound').addEventListener('click', () => {
+      if (player && player.isMuted()) {
+        player.unMute();
+        document.getElementById('toggle-sound').textContent = '🔊';
+      } else {
+        player.mute();
+        document.getElementById('toggle-sound').textContent = '🔇';
+      }
+    });
+  </script>
+</body>
+</html>
