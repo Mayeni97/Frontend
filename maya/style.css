@@ -1,0 +1,148 @@
+:root {
+  --warm-green: #3e5939;
+  --light-green: #d2e5c1;
+  --text-light: #f0f0f0;
+  --text-muted: #c1d2c1;
+  --dark: #0f0f0f;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--dark);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.page {
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('images/maya1.jpeg') no-repeat center center/cover;
+  background-blend-mode: overlay;
+  background-color: rgba(26, 40, 28, 0.85); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--light-green);
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.availability {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background: #fff;
+  color: var(--warm-green);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.interests {
+  background-color: #121212;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.interests h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--light-green);
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.interest {
+  background: #1f1f1f;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.interest:hover {
+  transform: translateY(-5px);
+}
+
+.interest img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 120px;
+}
+
+.interest p {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+}
+
+.about-me {
+  background: linear-gradient(to bottom, var(--warm-green), #2d402a);
+  color: var(--text-light);
+  padding: 4rem 2rem;
+  text-align: center;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.about-me .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-me h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--light-green);
+  margin-bottom: 1.5rem;
+}
+
+.about-me p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
